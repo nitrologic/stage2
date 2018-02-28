@@ -113,7 +113,7 @@ for(var index in tilesrc){
   var name=tilesrc[index];
   var tile = viewer.scene.primitives.add(new Cesium.Cesium3DTileset({  
     name : name,
-    url : '../assets/'+name
+    url : '../static/assets/'+name
   }));
   tiles[tile.name]=tile
   Cesium.when(tile.readyPromise).then(function(tile) {
@@ -127,7 +127,7 @@ var models=['CesiumAir.glb','seagull.glb','Duck.glb','CesiumMan.glb',"CesiumMilk
 for(var index in models){
   var matrix = Cesium.Transforms.eastNorthUpToFixedFrame(home);  
   var model = scene.primitives.add(Cesium.Model.fromGltf({
-      url : '../assets/'+models[index],
+      url : '../static/assets/'+models[index],
       modelMatrix : matrix,
       scale : 1000.0
   }));

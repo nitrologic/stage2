@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+<meta name="description" content="Augmented mapping of time and space" />
+<meta name="keywords" content="cesium,time,space,data" />
+<title>Stage</title>
+<script src="/static/Cesium/Cesium.js"></script>
+<style>
+@import url(Build/Cesium/Widgets/widgets.css);
+html, body, #viewer {background:black; width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;}
+#title{pointer-events: none;background:black; opacity: 0.5; width: 100%;z-index:2;position:absolute;top:0px;left:0px;}
+#header{background:black; opacity: 0.5;display:none;}
+#editor{background:grey; opacity: 0.8;width:400px;height:200px;display:none;}
+#menu{font:large;color:beige;z-index:2;position:absolute;top:0px;left:0px;}
+#credits{font:large;background:yellow;display:none;}
+</style>
+</head>
+<body>
+<div id="viewer" onkeypress="canvasKey()"></div>
+<div class="backdrop" id="credits">
+</div>
+<div class="backdrop" id="menu">
+<div id="header"><img src="acidsoftware.gif"/></div>
+<div id="editor"></div>
+</div>
+<script src="/static/stage2.js"></script>  
+</body>
+</html>

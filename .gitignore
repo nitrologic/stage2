@@ -1,3 +1,2 @@
-roa/static/Cesium/Assets
-__pycache__/
 *.pyc
+roa/static/Cesium/Assets

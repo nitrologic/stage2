@@ -11,5 +11,5 @@ urlpatterns = [
     ),
     path('junrei/', include('junrei.urls')),
     path('admin/', admin.site.urls),
-    path('/',RedirectView.as_view(url='junrei/'))
+    path('',RedirectView.as_view(url='junrei/'))
 ]

@@ -13,7 +13,7 @@ SECRET_KEY = '_5*&xxksq^-v1ip99v*#s=b(conf!5izs=!ma&0f($jbwaqn+-'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['roa.nz']
+ALLOWED_HOSTS = ['roa.nz','localhost']
 
 
 # Application definition

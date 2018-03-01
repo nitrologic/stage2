@@ -1,5 +1,4 @@
 // stage - a cesium client by simon
-
 // visit roa.nz a new beginning for the long term 
 
 //https://en.wikipedia.org/w/api.php?action=query&list=geosearch&gsradius=10000&gscoord=-36.88|174.75&format=json
@@ -40,17 +39,13 @@ var editor = new Cesium.Viewer('editor', {
   var widget = new Cesium.Animation('jog', viewModel);
 */
 
-//url : 'https://stamen-tiles.a.ssl.fastly.net/watercolor/',
-//credit : 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.'
-
-var terrainSource="https://s3-ap-southeast-2.amazonaws.com/roanz/terrain/nz-dem"; ///layer.json
+var terrainSource="https://s3-ap-southeast-2.amazonaws.com/roanz/terrain/nz-dem";
+var aerialSource="https://s3-ap-southeast-2.amazonaws.com/roanz/aerial/marble2004-sat";
 
 var viewer = new Cesium.Viewer('viewer', {
   sceneMode : Cesium.SceneMode.SCENE_3D,
   mapProjection : new Cesium.WebMercatorProjection(),
-  imageryProvider : Cesium.createOpenStreetMapImageryProvider({url : 'https://a.tile.openstreetmap.org/'}),
-  //imageryProvider : Cesium.createOpenStreetMapImageryProvider({url : 'https://stamen-tiles.a.ssl.fastly.net/watercolor/'}),
-//  terrainProvider : new Cesium.CesiumTerrainProvider({url : 'https://assets.agi.com/stk-terrain/world', requestVertexNormals: true}),
+  imageryProvider : Cesium.createOpenStreetMapImageryProvider({url : aerialSource}),
   terrainProvider : new Cesium.CesiumTerrainProvider({url : terrainSource, requestVertexNormals: true}),
   baseLayerPicker : false,
   homeButton: false,

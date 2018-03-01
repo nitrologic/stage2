@@ -43,12 +43,15 @@ var editor = new Cesium.Viewer('editor', {
 //url : 'https://stamen-tiles.a.ssl.fastly.net/watercolor/',
 //credit : 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.'
 
+var terrainSource="https://s3-ap-southeast-2.amazonaws.com/roanz/terrain/nz-dem"; ///layer.json
+
 var viewer = new Cesium.Viewer('viewer', {
   sceneMode : Cesium.SceneMode.SCENE_3D,
   mapProjection : new Cesium.WebMercatorProjection(),
   imageryProvider : Cesium.createOpenStreetMapImageryProvider({url : 'https://a.tile.openstreetmap.org/'}),
   //imageryProvider : Cesium.createOpenStreetMapImageryProvider({url : 'https://stamen-tiles.a.ssl.fastly.net/watercolor/'}),
-  terrainProvider : new Cesium.CesiumTerrainProvider({url : 'https://assets.agi.com/stk-terrain/world', requestVertexNormals: true}),
+//  terrainProvider : new Cesium.CesiumTerrainProvider({url : 'https://assets.agi.com/stk-terrain/world', requestVertexNormals: true}),
+  terrainProvider : new Cesium.CesiumTerrainProvider({url : terrainSource, requestVertexNormals: true}),
   baseLayerPicker : false,
   homeButton: false,
   timeline: false,

@@ -13,11 +13,14 @@ var extent = Cesium.Rectangle.fromCartesianArray(home);
 Cesium.Camera.DEFAULT_VIEW_RECTANGLE = extent;
 Cesium.Camera.DEFAULT_VIEW_FACTOR = 0;
 
-var time=new Cesium.JulianDate(0,60*60*14);
+var time=new Cesium.JulianDate(0,60*60*18);
 
-var terrainSource="https://s3-ap-southeast-2.amazonaws.com/roanz/terrain/nz-dem";
-var baseSource="https://s3-ap-southeast-2.amazonaws.com/roanz/aerial/marble2004-sat";
-var aerialSource="https://s3-ap-southeast-2.amazonaws.com/roanz/aerial/aerial.json";
+var terrainSource="https://s3.amazonaws.com/roavirginia/terrain/nz-dem";
+var baseSource="https://s3.amazonaws.com/roavirginia/aerial/marble2004-sat";
+
+//var terrainSource="https://s3-ap-southeast-2.amazonaws.com/roanz/terrain/nz-dem";
+//var baseSource="https://s3-ap-southeast-2.amazonaws.com/roanz/aerial/marble2004-sat";
+//var aerialSource="https://s3-ap-southeast-2.amazonaws.com/roanz/aerial/aerial.json";
 
 var viewer = new Cesium.Viewer('viewer', {
   sceneMode : Cesium.SceneMode.SCENE_3D,
@@ -33,7 +36,7 @@ var viewer = new Cesium.Viewer('viewer', {
   sceneModePicker: false,
   selectionIndicator: false,
   navigationHelpButton: false,
-  shadows : false,
+  shadows : true,
   vrButton:false,
   creditContainer: "credits",
   animation: false,
@@ -46,12 +49,11 @@ var scene = viewer.scene;
 scene.globe.enableLighting = true;
 scene.fog.enable=false;
 scene.allowTextureFilterAnisotropic = true;
-
 viewer.clock.currentTime = time;
-
 // viewer.clock.multiplier = 2000;
-scene.globe.maximumScreenSpaceError = 1.2;
-
+//scene.globe.maximumScreenSpaceError = 60;
+//scene.globe.enableLighting=true;
+//scene.globe.tileCacheSize=5000;
 //viewer.clockViewModel= new Cesium.ClockViewModel(viewer.clock);
 
 /*

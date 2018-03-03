@@ -5,6 +5,12 @@ from datetime import timedelta
 from django.contrib.auth.models import User
 from django.utils import timezone
 
+def jsonify(object,fields):
+    fields=[]
+    for field in fields:
+        fields.append('"'+field+'":"'+object[field]+'"')
+    return "{"+",".join(fields)+"}" 
+
 class Team(models.Model):
     name = models.CharField(max_length=200)
     callout = models.CharField(max_length=200)
@@ -12,10 +18,14 @@ class Team(models.Model):
     def __str__(self):
         return self.name
 
+    def json(self):
+        return jsonify(object=self,fields=["name","callout"])
+
 class Player(models.Model):
     name = models.CharField(max_length=200)
     team = models.ForeignKey(Team, on_delete=models.CASCADE)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    isGuest = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name

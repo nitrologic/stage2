@@ -9,6 +9,6 @@ urlpatterns = [
         'acidsoftware.gif',
         RedirectView.as_view(url=staticfiles_storage.url('acidsoftware.gif'))
     ),
-# main page    
+    path('hello', views.hello, name='hello'),
     path('', views.index, name="index"),
 ]

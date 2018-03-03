@@ -1,0 +1,7 @@
+html, body, #viewer {background:black; width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden;}
+#title{pointer-events: none;background:black; opacity: 0.5; width: 100%;z-index:2;position:absolute;top:0px;left:0px;}
+#header{background:black; opacity: 0.5;display:block;}
+#editor{background:grey; opacity: 0.8;width:400px;height:200px;display:none;}
+#menu{font:large;color:beige;z-index:2;position:absolute;top:0px;left:0px;}
+#credits{font:large;background:yellow;display:block;}
+#log{font-weight:heavy;color:#8a8;opacity:0.6;text-shadow: 2px 2px #262 , -2px -2px #020}
